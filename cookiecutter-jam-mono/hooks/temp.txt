@@ -1,0 +1,18 @@
+
+# create the remote repo(s)
+#  for remote_name, remote_details in {{ cookiecutter.remotes | dictsort }}:
+    #  switch(remote_details.provider):
+        #  case 'github':
+            #  # create the github repo
+            #  Github(os.environ.get('GITHUB_PAT')).get_user().create_repo('{{ cookiecutter.project_slug }}')
+            #  # point local repo to the remote
+            #  remote_repo = local_repo.create_remote(
+                #  remote_name,
+                #  'git@github.com:{{ cookiecutter.github_user }}/{{ cookiecutter.project_slug }}.git'
+            #  )
+            #  #  push to the remote
+            #  remote_repo.push(refspec='{}:{}'.format('master', 'master'))
+            #  break;
+        #  default:
+            #  print('Unrecognized remote type')
+#

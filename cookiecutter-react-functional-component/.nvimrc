@@ -1,0 +1,1 @@
+let $COC_NO_PLUGINS = 1

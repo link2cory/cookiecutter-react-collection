@@ -6,7 +6,7 @@ from cookiecutter.main import cookiecutter
 from github import Github
 from git import Repo
 
-def setup_git(): 
+def setup_git(use_github, continuous_integration, use_gitflow): 
     # activate .gitignore. It must be stored this way to facilitate versioning of
     # the cookiecutter.
     os.rename('gitignore', '.gitignore')
@@ -19,18 +19,18 @@ def setup_git():
     print('done initializing local repository')
 
 
-    if context['use_github'] == 'yes':
+    if use_github == 'yes':
         print('setting up github repository...')
         remote = setup_remote(local)
         add_remote(local)
         print('done setting up github repository')
         
-        if context['continuous_integration'] != 'no':
+        if continuous_integration != 'no':
             print('setting up continuous integration...')
             setup_continuous_integration(local, remote)
             print('done setting up continuous integration...')
 
-        if context['use_gitflow'] == 'yes':
+        if use_gitflow == 'yes':
             print('setting up gitflow...')
             setup_gitflow(remote)
             print('done setting up gitflow...')
@@ -122,7 +122,7 @@ def main(context):
 
       if context['use_git'] == 'yes':
           print('setting up git...')
-          setup_git()
+          setup_git(context['use_github'], context['continuous_integration'], context['use_gitflow'])
           print('finished setting up git...')
     else:
         remove_project_config_files()

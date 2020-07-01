@@ -92,6 +92,9 @@ def remove_project_config_files():
     os.remove('.eslintrc.js')
     os.remove('jest.config.js')
     os.remove('.prettierrc.js')
+    os.remove('.prettierignore')
+    os.remove('LICENSE')
+    os.remove('gitignore')
     os.remove('tsconfig.json')
 
 

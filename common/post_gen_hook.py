@@ -103,8 +103,6 @@ def remove_project_config_files():
     os.remove('.prettierignore')
     os.remove('LICENSE')
     os.remove('gitignore')
-    os.remove('tsconfig.json')
-
 
 def main(context):
     # run cookiecutter for each sub-package

@@ -97,12 +97,18 @@ def remove_extra_files():
         os.rmtree('.github/')
 
 def remove_project_config_files():
-    os.remove('.eslintrc.js')
-    os.remove('jest.config.js')
-    os.remove('.prettierrc.js')
-    os.remove('.prettierignore')
-    os.remove('LICENSE')
-    os.remove('gitignore')
+    config_files = [
+        '.eslintrc.js',
+        'jest.config.js',
+        '.prettierrc.js',
+        '.prettierignore',
+        'LICENSE',
+        'gitignore',
+    ]
+
+    for config_file in config_files:
+        if os.path.exists(config_file):
+          os.remove(config_file)
 
 def main(context):
     # run cookiecutter for each sub-package

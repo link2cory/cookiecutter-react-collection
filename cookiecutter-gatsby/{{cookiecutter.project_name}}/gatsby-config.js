@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {% if cookiecutter.emotion == 'yes' %}
+    `gatsby-plugin-emotion`
+    {% endif %}
+  ],
 }

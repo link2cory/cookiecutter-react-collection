@@ -14,5 +14,8 @@
   "ci_template": "cookiecutter-github-ci-js",
   "ci_test_name": "test",
   "packages": {},
-  "project_root": "/home/cory/.cookiecutters/cookiecutter-react"
+  "project_root": "/home/cory/.cookiecutters/cookiecutter-react",
+  "emotion": ["yes", "no"],
+  "tailwindcss": ["yes", "no"],
+  "typescript": ["yes", "no"]
 }

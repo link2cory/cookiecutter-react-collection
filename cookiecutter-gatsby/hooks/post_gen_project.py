@@ -5,5 +5,9 @@ from common.post_gen_hook import main
 
 # cookiecutter jinja2 obj is extracted as an OrderedDict
 from collections import OrderedDict
+context = {{ cookiecutter }}
+main(context)
 
-main({{ cookiecutter }})
+# remove tailwind configs if not used
+if context.tailwindcss !== 'yes' && os.path.exists('tailwind.config.js'):
+    os.remove('tailwind.config.js')

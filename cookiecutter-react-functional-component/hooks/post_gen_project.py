@@ -1,4 +1,5 @@
 import os
+from collections import OrderedDict
 
 from cookiecutter.main import cookiecutter
 

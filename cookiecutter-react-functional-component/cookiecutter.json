@@ -3,5 +3,6 @@
   "component_name_lower": "{{cookiecutter.component_name|lower}}",
   "stylesheet": ["css", "scss", "styled-components"],
   "tailwindcss": ["yes", "no"],
+  "storybook": ["yes", "no"],
   "testing": ["yes", "no"]
 }

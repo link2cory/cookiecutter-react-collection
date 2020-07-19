@@ -22,5 +22,9 @@ def setup_testing(testing: str):
     if testing != 'yes':
         os.remove('{{ cookiecutter.component_name }}.spec.tsx')
 
+def setup_storybook(storybook: str):
+    if storybook != 'yes':
+        os.remove('{{ cookiecutter.component_name }}.stories.tsx')
+
 setup_stylesheets(context['stylesheet'], context['component_name'])
 setup_testing(context['testing'])

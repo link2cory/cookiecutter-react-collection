@@ -9,5 +9,5 @@ context = {{ cookiecutter }}
 main(context)
 
 # remove tailwind configs if not used
-if (context.tailwindcss != 'yes' and os.path.exists('tailwind.config.js')):
+if (context['tailwindcss'] != 'yes' and os.path.exists('tailwind.config.js')):
     os.remove('tailwind.config.js')

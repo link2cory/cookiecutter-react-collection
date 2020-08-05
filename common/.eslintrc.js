@@ -52,8 +52,6 @@ module.exports = {
         bundledDependencies: false,
       },
     ],
-    'semi': 'off',
-    '@typescript-eslint/semi': ['error', 'never'],
     // there is no need for prop types, we are using typescript!
     'react/prop-types': [0],
   },

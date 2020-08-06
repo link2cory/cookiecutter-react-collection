@@ -4,5 +4,6 @@
   "stylesheet": ["css", "scss", "styled-components"],
   "tailwindcss": ["yes", "no"],
   "storybook": ["yes", "no"],
-  "testing": ["yes", "no"]
+  "testing": ["yes", "no"],
+  "use_typescript": ["yes", "no"]
 }

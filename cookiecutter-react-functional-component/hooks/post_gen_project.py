@@ -26,5 +26,23 @@ def setup_storybook(storybook: str):
     if storybook != 'yes':
         os.remove('{{ cookiecutter.component_name }}.stories.tsx')
 
+def rename_file_extensions(old: str, new: str, files):
+    # only rename files that have the old extension
+    for file in filter(lambda file: file.endswith(old), files):
+        # extract filename from the extension
+        filename_without_extension = os.path.splitext(file)[0]
+        # now rename the file
+        os.rename(file, filename_without_extension + '.' + new)
+
+def setup_typescript(use_typescript: str):
+    if use_typescript != 'yes':
+        # no need for the interfaces file
+        os.remove('interfaces.ts')
+        # rename all ts files to js
+        files = os.listdir('.')
+        rename_file_extensions('ts', 'js', files)
+        rename_file_extensions('tsx', 'jsx', files)
+
 setup_stylesheets(context['stylesheet'], context['component_name'])
 setup_testing(context['testing'])
+setup_typescript(context['use_typescript'])

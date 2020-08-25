@@ -6,9 +6,12 @@
   "license": "MIT",
   "scripts": {
     "watch": "tsc -w",
-    "dev": "nodemon dist/index.js"
+    "dev": "nodemon dist/index.js",
+    "migrate": "yarn prisma migrate save --experimental && yarn prisma migrate up --experimental && yarn prisma generate",
+    "prisma-studio": "npx prisma studio --experimental"
   },
   "dependencies": {
+    "@prisma/client": "^2.5.1"
   },
   "devDependencies": {
     "@prisma/cli": "^2.5.1",

@@ -7,14 +7,17 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon dist/index.js",
-    "migrate": "yarn prisma migrate save --experimental && yarn prisma migrate up --experimental && yarn prisma generate",
-    "prisma-studio": "npx prisma studio --experimental"
+    "prisma:migrate": "yarn prisma migrate save --experimental && yarn prisma migrate up --experimental && yarn prisma generate",
+    "prisma:studio": "npx prisma studio --experimental",
+    "nexus:generate": "ts-node --transpile-only src/schema.ts"
   },
   "dependencies": {
-    "@prisma/client": "^2.5.1"
+    "@nexus/schema": "^0.15.0",
+    "apollo-server": "^2.17.0",
+    "graphql": "^15.3.0",
+    "nexus-plugin-prisma": "^0.18.2"
   },
   "devDependencies": {
-    "@prisma/cli": "^2.5.1",
     "@types/node": "^14.6.0",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "eslint": "^7.7.0",
@@ -22,6 +25,7 @@
     "eslint-plugin-import": "^2.22.0",
     "nodemon": "^2.0.4",
     "prettier": "2.0.5",
+    "ts-node": "^9.0.0",
     "typescript": "^4.0.2"
   },
   "repository": {

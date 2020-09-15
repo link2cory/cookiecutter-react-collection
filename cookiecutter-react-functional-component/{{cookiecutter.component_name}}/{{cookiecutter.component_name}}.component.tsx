@@ -3,7 +3,7 @@ import React from 'react'
 import { {{ cookiecutter.component_name }}Props } from './interfaces'
 {% endif %}
 {% if cookiecutter.stylesheet == 'css' or cookiecutter.stylesheet == 'scss' %}
-  import './{{cookiecutter.component_name}}.{{ cookiecutter.stylesheet }}'
+  import './{{cookiecutter.component_name}}.styles.{{ cookiecutter.stylesheet }}'
 {% elif cookiecutter.stylesheet == 'styled-components' %}
   import Styled{{ cookiecutter.component_name }} from './{{cookiecutter.component_name}}.styles'
 {% endif %}

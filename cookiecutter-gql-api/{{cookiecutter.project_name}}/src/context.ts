@@ -1,16 +1,23 @@
-import { PrismaClient } from "@prisma/client";
-import { Request } from "apollo-server";
+import { PrismaClient, User } from "@prisma/client";
+
+import { ExpressContext } from "apollo-server-express/dist/ApolloServer";
+
+import { getUserFromRequest } from "./auth";
 
 const prisma = new PrismaClient();
 
 export interface Context {
-  request: Request;
+  incomingContext: ExpressContext;
   prisma: PrismaClient;
+  user: User | null;
 }
 
-export function createContext(request: Request): Context {
+export async function createContext(
+  incomingContext: ExpressContext,
+): Promise<Context> {
   return {
-    request,
+    incomingContext,
     prisma,
+    user: await getUserFromRequest(incomingContext.req, prisma),
   };
 }
